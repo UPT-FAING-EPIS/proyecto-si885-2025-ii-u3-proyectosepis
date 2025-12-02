@@ -1,0 +1,45 @@
+name: 'Ejecutar Script de Análisis de Repositorios'
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Se ejecuta a la 1:00 AM UTC todos los domingos.
+    - cron: '0 1 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+
+    - name: Instalar dependencias de Python
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Instalar ODBC Driver para SQL Server
+      run: |
+        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+        curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+        sudo apt-get update
+        sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
+
+    # --- INICIO DEL NUEVO PASO DE DIAGNÓSTICO ---
+    - name: (DEBUG) Verificar drivers ODBC instalados
+      run: odbcinst -q -d
+    # --- FIN DEL NUEVO PASO DE DIAGNÓSTICO ---
+
+    - name: Ejecutar el script de Python
+      run: python analizador_proyectos.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}

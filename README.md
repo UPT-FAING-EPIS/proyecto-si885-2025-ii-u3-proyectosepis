@@ -12,6 +12,14 @@
 
 ---
 
+## 📎 Enlaces del Proyecto
+
+- 🔗 **Dashboard Power BI:** [Dashboard-Proyectos](https://app.powerbi.com/links/UT-MLQnWHr?ctid=b6b466ee-468d-4011-b9fc-fbdcf82ac90a&pbi_source=linkShare)
+- 🔗 **Repositorio GitHub:** [Proyectos-EPIS](https://github.com/UPT-FAING-EPIS/proyecto-si885-2025-ii-u2-proyectos-epis)
+- 🔗 **Drive de Videos:** [Videos-EPIS](https://drive.google.com/drive/folders/1pSFP-eRDIsdfwNtJrib-TK4bpZkAZl3V?usp=sharing)
+
+---
+
 ## ❗ Problemática
 
 Actualmente, la **Escuela Profesional de Ingeniería de Sistemas** de la Universidad Privada de Tacna no dispone de un método sistemático para conocer qué herramientas, lenguajes y plataformas de despliegue están siendo utilizados en la práctica por sus estudiantes.
@@ -138,13 +146,6 @@ El pipeline de Python analiza múltiples indicadores en cada repositorio para ob
 - **Adaptación de contenidos** según herramientas realmente utilizadas
 - **Propuesta de nuevos talleres** basada en demanda real
 - **Evaluación del impacto** de la enseñanza en proyectos prácticos
-
----
-
-## 📎 Enlaces del Proyecto
-
-- 🔗 **Dashboard Power BI:** [Dashboard-Proyectos](https://app.powerbi.com/links/UT-MLQnWHr?ctid=b6b466ee-468d-4011-b9fc-fbdcf82ac90a&pbi_source=linkShare)
-- 🔗 **Repositorio GitHub:** [Proyectos-EPIS](https://github.com/UPT-FAING-EPIS/proyecto-si885-2025-ii-u2-proyectos-epis)
 
 ---
 
